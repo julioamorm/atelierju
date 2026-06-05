@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doces da Ju | Bolos e Doces Personalizados com Amor | BH e Betim</title>
+  <meta name="description" content="Bolos e doces artesanais personalizados por Juliana. Feitos com carinho em BH e Betim. Cada criação é uma memória doce para quem você ama.">
+  <meta name="theme-color" content="#F2D1D8">
+
+  <!-- Fonts: Playfair Display (serif elegante para títulos) + Inter (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN + config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'serif-elegant': ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+            'sans-body': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          },
+          colors: {
+            'brand-brown': '#4A3F35',
+            'brand-cocoa': '#5C4033',
+            'brand-cream': '#FDF8F3',
+            'brand-blush': '#F2D1D8',
+            'brand-lightblush': '#FDF0F3',
+            'brand-bg': '#FFFEF9',
+            'brand-accent': '#C5A07A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --brand-brown: #4A3F35;
+      --brand-cocoa: #5C4033;
+      --brand-cream: #FDF8F3;
+      --brand-blush: #F2D1D8;
+      --brand-lightblush: #FDF0F3;
+      --brand-bg: #FFFEF9;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #FFFEF9;
+      color: #4A3F35;
+      overflow-x: hidden; /* evita scroll horizontal em telas pequenas ou com elementos largos */
+    }
+
+    .font-serif-elegant {
+      font-family: 'Playfair Display', ui-serif, Georgia, serif;
+      font-feature-settings: "liga" 1, "tnum" 1;
+    }
+
+    .section {
+      scroll-margin-top: 80px;
+    }
+
+    /* Espaçamento generoso entre seções (120-160px no desktop, menor no mobile para não ficar esparso) */
+    .section + .section {
+      margin-top: 72px;
+    }
+    @media (min-width: 640px) {
+      .section + .section {
+        margin-top: 96px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .section + .section {
+        margin-top: 140px;
+      }
+    }
+
+    .container-custom {
+      max-width: 1200px; /* mais profissional, evita layout muito largo em telas grandes */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .container-custom {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+    @media (min-width: 1280px) {
+      .container-custom {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+
+    /* Tipografia títulos */
+    h1, .h1 {
+      font-family: 'Playfair Display', ui-serif, Georgia, serif;
+      color: #4A3F35;
+      line-height: 1.05;
+    }
+    h2, .h2 {
+      font-family: 'Playfair Display', ui-serif, Georgia, serif;
+      color: #4A3F35;
+      line-height: 1.1;
+    }
+
+    /* Botões blush */
+    .btn-blush {
+      background-color: #F2D1D8;
+      color: #4A3F35;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+    }
+    .btn-blush:hover {
+      background-color: #E8A9B5;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+    }
+    .btn-blush:active {
+      transform: translateY(0);
+    }
+
+    .btn-blush-lg {
+      background-color: #F2D1D8;
+      color: #4A3F35;
+      font-weight: 700;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+      font-size: 1.05rem;
+      transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .btn-blush-lg:hover {
+      background-color: #E8A9B5;
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #4A3F35;
+      border: 1.5px solid #4A3F35;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover {
+      background-color: #4A3F35;
+      color: #FFFEF9;
+    }
+
+    /* Cards creme com sombra sutil */
+    .card-cream {
+      background-color: #FDF8F3;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-cream:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+    }
+
+    /* Imagens com tratamento elegante */
+    .hero-img, .cardapio-img {
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+    .hero-img:hover {
+      transform: scale(1.015);
+    }
+
+    .cardapio-img {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* Modal lightbox */
+    .modal {
+      animation: fadeInModal 0.2s ease forwards;
+    }
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-content {
+      animation: scaleIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    @keyframes scaleIn {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Passos numerados */
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background-color: #F2D1D8;
+      color: #4A3F35;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) {
+      .step-number {
+        width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
+      }
+    }
+
+    /* Depoimentos */
+    .testimonial {
+      background-color: white;
+      border-radius: 20px;
+      border-left: 5px solid #F2D1D8;
+    }
+
+    /* Micro tipografia */
+    .micro {
+      font-size: 0.875rem;
+      line-height: 1.4;
+      color: #5C4033;
+    }
+
+    /* Nav link ativo */
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: #5C4033;
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #F2D1D8;
+      border-radius: 1px;
+    }
+
+    /* Botão flutuante WhatsApp */
+    .wa-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 60;
+      background-color: #F2D1D8;
+      color: #4A3F35;
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wa-float:hover {
+      transform: scale(1.08) translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15);
+    }
+
+    /* Ajustes para imagens com espaço no nome */
+    .asset-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Foco acessível */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #F2D1D8;
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HEADER / NAV -->
+  <header class="sticky top-0 z-50 bg-[#FFFEF9]/95 backdrop-blur-md border-b border-[#EDE5DC]">
+    <div class="container-custom">
+      <div class="flex h-20 items-center justify-between">
+        <!-- Logo -->
+        <a href="#top" class="flex items-center gap-3" aria-label="Doces da Ju - Início">
+          <img src="assets/logo.png" alt="Doces da Ju - Logo com cupcake e coração" class="h-11 w-auto" loading="eager">
+        </a>
+
+        <!-- Nav desktop -->
+        <nav class="hidden lg:flex items-center gap-x-9 text-sm font-medium tracking-[-0.1px]">
+          <a href="#conexao" class="nav-link text-[#4A3F35] hover:text-[#5C4033]">A Conexão</a>
+          <a href="#beneficios" class="nav-link text-[#4A3F35] hover:text-[#5C4033]">Benefícios</a>
+          <a href="#como-funciona" class="nav-link text-[#4A3F35] hover:text-[#5C4033]">Como Funciona</a>
+          <a href="#depoimentos" class="nav-link text-[#4A3F35] hover:text-[#5C4033]">Depoimentos</a>
+        </nav>
+
+        <!-- CTAs header -->
+        <div class="flex items-center gap-x-3">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/julianaamormino/" target="_blank" rel="noopener noreferrer"
+             class="hidden md:flex items-center justify-center w-10 h-10 rounded-full text-[#4A3F35] hover:bg-[#F2D1D8]/60 transition-colors"
+             aria-label="Instagram de Juliana Amorim">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25c2.757 0 3.1.01 4.206.06 1.07.05 1.8.22 2.22.46.48.27.82.62 1.09 1.09.24.42.41 1.15.46 2.22.05 1.1.06 1.45.06 4.206 0 2.757-.01 3.1-.06 4.206-.05 1.07-.22 1.8-.46 2.22-.27.48-.62.82-1.09 1.09-.42.24-1.15.41-2.22.46-1.1.05-1.45.06-4.206.06-2.757 0-3.1-.01-4.206-.06-1.07-.05-1.8-.22-2.22-.46-.48-.27-.82-.62-1.09-1.09-.24-.42-.41-1.15-.46-2.22-.05-1.1-.06-1.45-.06-4.206 0-2.757.01-3.1.06-4.206.05-1.07.22-1.8.46-2.22.27-.48.62-.82 1.09-1.09.42-.24 1.15-.41 2.22-.46C8.9 2.26 9.243 2.25 12 2.25z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75h.008v.008h-.008V6.75z" />
+            </svg>
+          </a>
+
+          <!-- Botão WhatsApp header -->
+          <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20vi%20seu%20site%20e%20gostaria%20de%20encomendar%20um%20bolo%20personalizado!" 
+             target="_blank" rel="noopener noreferrer"
+             class="btn-blush inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold tracking-[-0.1px]">
+            Falar com Juliana
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn"
+                  class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full text-[#4A3F35] hover:bg-[#F2D1D8]/60"
+                  aria-label="Abrir menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-[#EDE5DC] bg-[#FFFEF9]">
+      <div class="container-custom py-6 flex flex-col gap-y-4 text-base font-medium">
+        <a href="#conexao" class="mobile-nav-link py-1">A Conexão</a>
+        <a href="#beneficios" class="mobile-nav-link py-1">Benefícios</a>
+        <a href="#como-funciona" class="mobile-nav-link py-1">Como Funciona</a>
+        <a href="#depoimentos" class="mobile-nav-link py-1">Depoimentos</a>
+        <div class="pt-2">
+          <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20vi%20seu%20site%20e%20gostaria%20de%20encomendar%20um%20bolo%20personalizado!" 
+             target="_blank" rel="noopener noreferrer"
+             class="btn-blush w-full inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold">
+            Falar com Juliana no WhatsApp
+          </a>
+        </div>
+        <a href="https://www.instagram.com/julianaamormino/" target="_blank" rel="noopener noreferrer"
+           class="text-sm text-[#5C4033] flex items-center gap-2">
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / PÁGINA 1 -->
+  <section id="top" class="section pt-10 pb-4 lg:pt-16">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-x-10 lg:gap-x-14 xl:gap-x-16 items-center">
+        <!-- Texto -->
+        <div class="lg:pr-4">
+          <div class="max-w-[620px]">
+            <!-- Eyebrow -->
+            <div class="inline-flex items-center rounded-full bg-[#FDF8F3] px-4 py-1 text-xs tracking-[1.5px] font-semibold text-[#5C4033] mb-6">
+              ATELIÊ DE DOCES • BELO HORIZONTE &amp; BETIM
+            </div>
+
+            <h1 class="h1 text-4xl sm:text-5xl md:text-6xl lg:text-[66px] xl:text-[72px] leading-[1.05] tracking-[-1.2px] font-bold mb-6">
+              Feito com as mãos,<br>
+              entregue com o coração.
+            </h1>
+
+            <p class="text-[17px] sm:text-[18px] md:text-[19px] text-[#5C4033] leading-relaxed mb-8 max-w-[520px]">
+              Bolos e doces artesanais personalizados por Juliana. Cada criação é pensada para celebrar quem você ama — com ingredientes selecionados e muito carinho.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+              <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20quero%20criar%20uma%20memória%20doce%20para%20alguém%20especial!" 
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn-blush inline-flex items-center justify-center rounded-full px-8 py-[14px] text-base font-semibold w-full sm:w-auto">
+                Quero criar uma memória doce
+              </a>
+              <a href="#cardapio" 
+                 class="btn-outline inline-flex items-center justify-center rounded-full px-7 py-[14px] text-base font-semibold w-full sm:w-auto">
+                Ver o cardápio
+              </a>
+            </div>
+
+            <div class="mt-6 text-xs tracking-widest text-[#5C4033]/70">
+              ENTREGA EM BH E BETIM • PERSONALIZAÇÃO TOTAL
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagem do bolo 1 (canto superior da página) -->
+        <div class="mt-10 lg:mt-0">
+          <div class="relative">
+            <img 
+              src="assets/bolo%201.jpeg" 
+              alt="Bolo decorado com margaridas brancas em açúcar, laço rosa e laterais texturizadas em verde suave — foto principal do ateliê"
+              class="hero-img asset-img w-full max-h-[380px] sm:max-h-[440px] lg:max-h-[520px] object-cover rounded-[24px] lg:rounded-[28px]"
+              loading="eager">
+            <div class="absolute -bottom-3 -right-3 bg-white/90 backdrop-blur px-4 py-2 rounded-2xl shadow text-xs font-medium tracking-wide text-[#5C4033] hidden lg:block">
+              Feito especialmente para você
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO / PÁGINA 2 -->
+  <section id="cardapio" class="section">
+    <div class="container-custom">
+      <div class="text-center mb-10">
+        <h2 class="h2 text-3xl sm:text-[34px] lg:text-[38px] tracking-[-0.6px] font-bold mb-3">Meu cardápio</h2>
+        <p class="text-[#5C4033] max-w-md mx-auto">Doces e bolos feitos sob encomenda para os seus melhores momentos. Clique nas imagens para ver os detalhes.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Cardápio Doce (esquerda) -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-[22px] bg-[#FDF8F3] shadow-sm" onclick="openLightbox('assets/cardapio%20doce.jpeg', 'Cardápio de Doces Artesanais')">
+            <img src="assets/cardapio%20doce.jpeg" 
+                 alt="Cardápio de Doces Artesanais com brigadeiros, cajuzinhos, bombons e caixa de degustação — foto do menu físico"
+                 class="cardapio-img w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:max-h-[420px] object-cover">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-6 rounded-b-[22px]">
+              <div class="text-white">
+                <div class="font-semibold tracking-wide text-xl">Cardápio Doce</div>
+                <div class="text-white/90 text-sm mt-0.5">Brigadeiros, cajuzinhos, bombons e mais • Encomenda mínima: 25 unidades</div>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/95 text-[10px] font-medium px-3 py-1 rounded-full shadow-sm text-[#4A3F35] tracking-widest">CLIQUE PARA AMPLIAR</div>
+          </div>
+        </div>
+
+        <!-- Cardápio Bolo (direita) -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-[22px] bg-[#FDF8F3] shadow-sm" onclick="openLightbox('assets/cardapio%20bolo.jpeg', 'Cardápio de Bolos')">
+            <img src="assets/cardapio%20bolo.jpeg" 
+                 alt="Cardápio de Bolos com tamanhos P, M e G e foto de bolo de três andares branco com flores pastel e laços rosa"
+                 class="cardapio-img w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:max-h-[420px] object-cover">
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-6 rounded-b-[22px]">
+              <div class="text-white">
+                <div class="font-semibold tracking-wide text-xl">Cardápio de Bolos</div>
+                <div class="text-white/90 text-sm mt-0.5">Tamanhos P (10-15p), M (20-25p) e G (30-35p) • A partir de R$ 150</div>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white/95 text-[10px] font-medium px-3 py-1 rounded-full shadow-sm text-[#4A3F35] tracking-widest">CLIQUE PARA AMPLIAR</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="micro max-w-lg mx-auto">Todos os sabores e decorações são personalizáveis. As imagens refletem opções reais do ateliê.</p>
+        <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20não%20encontrei%20exatamente%20o%20que%20procurava.%20Podemos%20criar%20juntos%3F" 
+           target="_blank" rel="noopener noreferrer"
+           class="mt-4 inline-flex text-sm font-semibold text-[#5C4033] hover:text-[#4A3F35] items-center gap-1.5">
+          Não achou o que procura? Vamos criar o seu bolo dos sonhos no WhatsApp →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SEÇÃO DE CONEXÃO EMOCIONAL (~420px) -->
+  <section id="conexao" class="section">
+    <div class="container-custom max-w-[860px] text-center">
+      <h2 class="h2 text-3xl sm:text-4xl lg:text-[42px] leading-tight tracking-[-0.6px] font-bold mb-8 mx-auto">
+        Confeitar é o meu jeito diferente de amar você
+      </h2>
+
+      <div class="prose prose-lg text-[#5C4033] leading-[1.65] text-[17px] sm:text-[18px] mx-auto">
+        <p class="mb-5">Cada bolo que sai das minhas mãos é pensado em quem vai receber. Não é só um doce. É um pedaço de carinho, feito com ingredientes selecionados e a vontade sincera de criar um momento que a pessoa nunca vai esquecer.</p>
+        <p>Quando você encomenda comigo, não está comprando um bolo. Está presenteando alguém com amor materializado.</p>
+      </div>
+
+      <div class="mt-9 flex justify-center">
+        <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20quero%20criar%20uma%20memória%20doce%20para%20alguém%20especial!" 
+           target="_blank" rel="noopener noreferrer"
+           class="btn-blush inline-flex items-center rounded-full px-8 py-3.5 text-[15px] font-semibold">
+          Quero criar uma memória doce para alguém especial
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEÇÃO DE BENEFÍCIOS (3 cards ~380px) -->
+  <section id="beneficios" class="section">
+    <div class="container-custom">
+      <h2 class="h2 text-3xl sm:text-[34px] lg:text-[36px] tracking-[-0.6px] font-bold max-w-2xl mb-10 mx-auto text-center">
+        Não é só mais um bolo. É o bolo que faz a diferença.
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="card-cream p-8 sm:p-10">
+          <div class="mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-[#C5A07A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-2xl tracking-tight mb-3">Personalização total</h3>
+          <p class="text-[#5C4033] leading-relaxed">Feito especialmente para a pessoa que você ama</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-cream p-8 sm:p-10">
+          <div class="mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-[#C5A07A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-2xl tracking-tight mb-3">Qualidade e carinho</h3>
+          <p class="text-[#5C4033] leading-relaxed">Ingredientes escolhidos com alma e acabamento que impressiona</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-cream p-8 sm:p-10">
+          <div class="mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-[#C5A07A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-2xl tracking-tight mb-3">Entrega em BH e Betim</h3>
+          <p class="text-[#5C4033] leading-relaxed">Pontualidade e cuidado do início ao fim</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SEÇÃO “COMO FUNCIONA” (~520px) -->
+  <section id="como-funciona" class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mb-12 text-center mx-auto">
+        <h2 class="h2 text-3xl sm:text-[34px] lg:text-[36px] tracking-[-0.5px] font-bold">
+          Em 3 passos simples você transforma um momento comum em algo extraordinário
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Passo 1 -->
+        <div class="flex gap-5">
+          <div>
+            <div class="step-number">1</div>
+          </div>
+          <div class="pt-1">
+            <div class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Me conta a ocasião e o sabor dos sonhos</div>
+            <p class="text-[#5C4033] leading-relaxed text-[15px]">Você me conta tudo: data, quantidade de pessoas, sabores preferidos e qualquer detalhe especial. Sem compromisso.</p>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="flex gap-5">
+          <div>
+            <div class="step-number">2</div>
+          </div>
+          <div class="pt-1">
+            <div class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Eu crio uma proposta personalizada com carinho</div>
+            <p class="text-[#5C4033] leading-relaxed text-[15px]">Em até 2 horas envio uma proposta com valor, prazo e visual. Ajustamos juntos até ficar perfeito.</p>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="flex gap-5">
+          <div>
+            <div class="step-number">3</div>
+          </div>
+          <div class="pt-1">
+            <div class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Você aprova e eu coloco amor em cada camada</div>
+            <p class="text-[#5C4033] leading-relaxed text-[15px]">Depois da aprovação, coloco a mão na massa com todo o carinho e entrego no dia combinado com todo o cuidado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20quero%20começar%20meu%20pedido%20agora%20(leva%2030%20segundos)!" 
+           target="_blank" rel="noopener noreferrer"
+           class="btn-blush-lg inline-flex items-center justify-center rounded-full font-semibold">
+          Começar meu pedido agora (leva 30 segundos)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SEÇÃO DE PROVA SOCIAL (~480px) -->
+  <section id="depoimentos" class="section">
+    <div class="container-custom">
+      <h2 class="h2 text-3xl sm:text-[34px] lg:text-[36px] tracking-[-0.6px] font-bold mb-10 text-center">
+        Quem já recebeu um bolo meu nunca esquece
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Depoimento 1 -->
+        <div class="testimonial p-6 sm:p-7">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 rounded-full bg-[#F2D1D8] flex items-center justify-center text-[#4A3F35] font-semibold text-lg flex-shrink-0">AC</div>
+            <div>
+              <div class="font-semibold">Ana Clara</div>
+              <div class="text-xs text-[#5C4033]">BH</div>
+            </div>
+          </div>
+          <p class="text-[#5C4033] leading-relaxed text-[15.2px]">“Meu marido chorou quando viu o bolo. Disse que foi o presente mais bonito que já ganhou.”</p>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="testimonial p-6 sm:p-7">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 rounded-full bg-[#FDF8F3] flex items-center justify-center text-[#4A3F35] font-semibold text-lg flex-shrink-0">BL</div>
+            <div>
+              <div class="font-semibold">Beatriz Lima</div>
+              <div class="text-xs text-[#5C4033]">BH</div>
+            </div>
+          </div>
+          <p class="text-[#5C4033] leading-relaxed text-[15.2px]">“O bolo de 15 anos da minha filha ficou perfeito. Cada detalhe que pedi foi atendido com muito cuidado. A Juliana entendeu exatamente o que eu queria e o sabor era incrível.”</p>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="testimonial p-6 sm:p-7">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 rounded-full bg-[#F2D1D8] flex items-center justify-center text-[#4A3F35] font-semibold text-lg flex-shrink-0">PS</div>
+            <div>
+              <div class="font-semibold">Pedro Santos</div>
+              <div class="text-xs text-[#5C4033]">Betim</div>
+            </div>
+          </div>
+          <p class="text-[#5C4033] leading-relaxed text-[15.2px]">“Chegou pontualmente e o olhar da minha mãe quando viu o bolo de surpresa... impagável. Muito obrigada por tornar o dia dela especial com tanto carinho.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. SEÇÃO FINAL CTA (~380px, fundo blush bem claro) -->
+  <section class="section bg-[#FDF0F3] py-16 lg:py-20">
+    <div class="container-custom text-center">
+      <div class="max-w-[720px] mx-auto">
+        <h2 class="h2 text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] tracking-[-0.6px] font-bold mb-3">
+          Não deixe para depois o momento que merece ser doce agora.
+        </h2>
+
+        <div class="mt-9">
+          <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20quero%20garantir%20meu%20bolo%20personalizado%20agora!" 
+             target="_blank" rel="noopener noreferrer"
+             class="btn-blush-lg inline-flex items-center justify-center rounded-full font-semibold shadow-sm">
+            Falar com Juliana agora no WhatsApp e garantir meu bolo
+          </a>
+        </div>
+
+        <p class="micro mt-5 tracking-wide">
+          Respondo em até 2 horas • Personalização total • Entrega em BH e Betim
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#EDE5DC] pt-10 pb-8">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-6 text-sm">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Doces da Ju" class="h-8 w-auto opacity-80">
+          <div>
+            <div class="font-medium tracking-tight">Doces da Ju</div>
+            <div class="text-[#5C4033]/70 text-xs">Ateliê de doces • Belo Horizonte &amp; Betim</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[#5C4033]">
+          <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="hover:text-[#4A3F35]">WhatsApp (31) 8495-6819</a>
+          <a href="https://www.instagram.com/julianaamormino/" target="_blank" rel="noopener noreferrer" class="hover:text-[#4A3F35]">Instagram</a>
+          <span class="text-[#5C4033]/50 hidden md:inline">•</span>
+          <span class="text-[#5C4033]/70 text-xs">© 2025 Doces da Ju. Feito com carinho.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/553184956819?text=Olá%20Juliana%2C%20vi%20o%20site%20e%20gostaria%20de%20encomendar%20um%20bolo%20personalizado!" 
+     target="_blank" rel="noopener noreferrer"
+     class="wa-float lg:hidden" aria-label="Falar com Juliana no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.67-.181-1.297-.181-.628 0-1.297.074-1.446.223-.148.148-.297.372-.297.62 0 .248.05.62.223.992.173.372.744 1.116 1.643 2.01.9.893 1.643 1.366 2.01 1.54.372.173.62.248.992.223.372-.025.62-.124.992-.372.372-.248 1.116-.893 1.366-1.54.25-.644.25-.992.124-1.116z"/>
+      <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75 0 1.71.447 3.36 1.236 4.785L2.25 21.75l4.965-1.236A9.72 9.72 0 0012 21.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 17.625c-1.5 0-2.955-.39-4.23-1.11l-.3-.18-3.03.765.765-3.03-.18-.3A8.25 8.25 0 013.75 12c0-4.56 3.69-8.25 8.25-8.25s8.25 3.69 8.25 8.25-3.69 8.25-8.25 8.25z"/>
+    </svg>
+  </a>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" onclick="closeLightbox()" class="hidden fixed inset-0 z-[70] bg-black/80 flex items-center justify-center p-4">
+    <div onclick="event.stopImmediatePropagation()" class="modal-content relative max-w-[96vw] max-h-[92vh] w-full">
+      <button onclick="closeLightbox()" 
+              class="absolute -top-3 -right-3 z-10 bg-white text-[#4A3F35] w-9 h-9 rounded-full flex items-center justify-center shadow text-xl leading-none hover:bg-[#F2D1D8]" 
+              aria-label="Fechar">×</button>
+      <img id="lightbox-img" class="max-h-[88vh] w-auto mx-auto rounded-2xl shadow-2xl object-contain" alt="">
+      <div id="lightbox-caption" class="text-center text-white/90 mt-3 text-sm tracking-wide"></div>
+    </div>
+  </div>
+
+  <script>
+    // Tailwind já configurado no head
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        mobileBtn.setAttribute('aria-expanded', !isOpen);
+        mobileBtn.innerHTML = isOpen 
+          ? '<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>'
+          : '<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
+      });
+
+      // Fechar menu ao clicar em link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+          mobileBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+        });
+      });
+    }
+
+    // Lightbox para cardápios
+    function openLightbox(src, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+
+      img.src = src;
+      img.alt = caption;
+      cap.textContent = caption;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('flex');
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Fecha lightbox com ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox.classList.contains('hidden')) {
+          closeLightbox();
+        }
+      }
+    });
+
+    // Smooth scroll + fechar menu mobile ao navegar (melhoria)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Active nav link via Intersection Observer (leve)
+    const sections = ['conexao', 'beneficios', 'como-funciona', 'depoimentos'];
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    }, { 
+      threshold: 0.3,
+      rootMargin: '-80px 0px -40% 0px' 
+    });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // Easter egg sutil: clique na logo volta ao topo com animação
+    const logoLink = document.querySelector('header a[href="#top"]');
+    if (logoLink) {
+      logoLink.addEventListener('click', (e) => {
+        // já tem href #top com smooth
+      });
+    }
+
+    // Log de inicialização (útil para debug)
+    console.log('%c[Doces da Ju] Landing page carregada com sucesso. WhatsApp: +55 31 8495-6819', 'color:#5C4033;font-size:9px');
+  </script>
+
+</body>
+</html>
